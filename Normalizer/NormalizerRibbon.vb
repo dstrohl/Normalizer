@@ -1,8 +1,8 @@
 ﻿Imports Microsoft.Office.Tools.Ribbon
 
 Public Class Normalize
-    Public ColumnsObj As ColumnsClass = New ColumnsClass
-    Public NormConfig As ConfigSettings = New ConfigSettings
+    'Public ColumnsObj As ColumnsClass = New ColumnsClass
+    'Public NormConfig As ConfigSettings = New ConfigSettings
 
     'Private Sub TestCopy_Click(sender As Object, e As RibbonControlEventArgs) Handles TestCopy.Click
     '    NormConfig.HeaderColCount = 1
@@ -31,6 +31,7 @@ Public Class Normalize
             ElseIf BySelector.SelectedItemIndex = 2 Then
                 'Globals.Ribbons.Ribbon1.rgStep2_byCol.Visible = False
                 'Globals.Ribbons.Ribbon1.rgStep2_bydel.Visible = True
+                Globals.ThisAddIn.WorkingColumns.AllContent = Globals.ThisAddIn.Application.Selection
                 Globals.ThisAddIn.ByColAdvConfigPane.Visible = False
                 Globals.ThisAddIn.ByDelAdvConfigPane.Visible = True
             Else

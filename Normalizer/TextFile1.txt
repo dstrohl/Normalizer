@@ -73,7 +73,6 @@ Public MustInherit Class ColumnClassBase
 
     Public ReadOnly Property ColDataRange() As Excel.Range
         Get
-            WriteDebug("Getting ColDataRange : " & getRCText(StartCol, DataStartRow, EndCol, Rows))
             Return _ColumnsParent.AllContent.Range(getRCText(StartCol, DataStartRow, EndCol, Rows))
         End Get
     End Property
@@ -81,7 +80,6 @@ Public MustInherit Class ColumnClassBase
 
     Public ReadOnly Property ColHeaderRange() As Excel.Range
         Get
-            WriteDebug("Getting ColHeaderRange : " & getRCText(StartCol, 1, EndCol, HeaderRows))
             Return _ColumnsParent.AllContent.Range(getRCText(StartCol, 1, EndCol, HeaderRows))
         End Get
     End Property
@@ -129,8 +127,6 @@ Public MustInherit Class ColumnClassBase
         Dim col, row As Long
         Dim row_max As Long = range.Rows.CountLarge
         Dim col_max As Long = range.Columns.CountLarge
-
-        RangeDebug(range, direction & " Corner")
         Select Case direction
             Case TopLeft
                 row = 1
@@ -161,12 +157,10 @@ Public MustInherit Class ColumnClassBase
     End Function
 
     Public Function HeaderCorner(direction As String, Optional ByVal row_offset As Integer = 0, Optional ByVal col_offset As Integer = 0) As CornerItem
-        RangeDebug(ColHeaderRange, "col header range")
         Return Corner(direction, ColHeaderRange, row_offset, col_offset)
     End Function
 
     Public Function DataCorner(direction As String, Optional ByVal row_offset As Integer = 0, Optional ByVal col_offset As Integer = 0) As CornerItem
-        RangeDebug(ColDataRange, direction & " Data Corner")
         Return Corner(direction, ColDataRange, row_offset, col_offset)
     End Function
 
@@ -334,6 +328,9 @@ Public Class ColumnsClass
     Public Sub New()
         'Dim _HeaderColGroupObj As New HeaderColumClass(Parent:=Me)
         'Dim _DataColGroupObj As New DataColumClass(Parent:=Me)
+    End Sub
+    Public Sub Setup()
+
     End Sub
 
     Public Property AllContent() As Excel.Range

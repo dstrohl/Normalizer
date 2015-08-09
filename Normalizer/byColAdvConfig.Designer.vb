@@ -34,33 +34,28 @@ Partial Class byColAdvConfigControl
         Me.btnBcPreview = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.grpbox1 = New System.Windows.Forms.GroupBox()
-        Me.byColGrpSize = New System.Windows.Forms.NumericUpDown()
+        Me.DataColumnGroupSize = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.PreviewColumn = New System.Windows.Forms.TrackBar()
         Me.btnRefreshPreview = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.ColGrpSizeControl = New System.Windows.Forms.TextBox()
         CType(Me.byColHeaderRowsControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.byColHeaderColControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.grpbox1.SuspendLayout()
-        CType(Me.byColGrpSize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.PreviewColumn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'byColHeaderRowsControl
         '
         Me.byColHeaderRowsControl.Location = New System.Drawing.Point(106, 21)
+        Me.byColHeaderRowsControl.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.byColHeaderRowsControl.Name = "byColHeaderRowsControl"
         Me.byColHeaderRowsControl.Size = New System.Drawing.Size(82, 22)
         Me.byColHeaderRowsControl.TabIndex = 0
@@ -78,6 +73,7 @@ Partial Class byColAdvConfigControl
         'byColHeaderColControl
         '
         Me.byColHeaderColControl.Location = New System.Drawing.Point(106, 51)
+        Me.byColHeaderColControl.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.byColHeaderColControl.Name = "byColHeaderColControl"
         Me.byColHeaderColControl.Size = New System.Drawing.Size(82, 22)
         Me.byColHeaderColControl.TabIndex = 3
@@ -166,8 +162,7 @@ Partial Class byColAdvConfigControl
         '
         'grpbox1
         '
-        Me.grpbox1.Controls.Add(Me.ColGrpSizeControl)
-        Me.grpbox1.Controls.Add(Me.byColGrpSize)
+        Me.grpbox1.Controls.Add(Me.DataColumnGroupSize)
         Me.grpbox1.Controls.Add(Me.Label5)
         Me.grpbox1.Controls.Add(Me.byColHeaderRowsControl)
         Me.grpbox1.Controls.Add(Me.Label1)
@@ -181,17 +176,21 @@ Partial Class byColAdvConfigControl
         Me.grpbox1.TabStop = False
         Me.grpbox1.Text = "Headers"
         '
-        'byColGrpSize
+        'DataColumnGroupSize
         '
-        Me.byColGrpSize.Location = New System.Drawing.Point(147, 111)
-        Me.byColGrpSize.Name = "byColGrpSize"
-        Me.byColGrpSize.Size = New System.Drawing.Size(41, 22)
-        Me.byColGrpSize.TabIndex = 6
+        Me.DataColumnGroupSize.FormattingEnabled = True
+        Me.DataColumnGroupSize.Items.AddRange(New Object() {"1"})
+        Me.DataColumnGroupSize.Location = New System.Drawing.Point(120, 83)
+        Me.DataColumnGroupSize.MaxDropDownItems = 20
+        Me.DataColumnGroupSize.Name = "DataColumnGroupSize"
+        Me.DataColumnGroupSize.Size = New System.Drawing.Size(68, 24)
+        Me.DataColumnGroupSize.TabIndex = 8
+        Me.DataColumnGroupSize.Text = "1"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(11, 83)
+        Me.Label5.Location = New System.Drawing.Point(11, 86)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(103, 17)
         Me.Label5.TabIndex = 5
@@ -241,9 +240,6 @@ Partial Class byColAdvConfigControl
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.PreviewColumn)
         Me.GroupBox2.Controls.Add(Me.btnRefreshPreview)
         Me.GroupBox2.Controls.Add(Me.btnBcPreview)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -254,35 +250,9 @@ Partial Class byColAdvConfigControl
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Preview"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(22, 88)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(82, 17)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Data Group"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(35, 71)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(57, 17)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "Preview"
-        '
-        'PreviewColumn
-        '
-        Me.PreviewColumn.Location = New System.Drawing.Point(10, 108)
-        Me.PreviewColumn.Name = "PreviewColumn"
-        Me.PreviewColumn.Size = New System.Drawing.Size(98, 53)
-        Me.PreviewColumn.TabIndex = 14
-        Me.PreviewColumn.Value = 1
-        '
         'btnRefreshPreview
         '
-        Me.btnRefreshPreview.Location = New System.Drawing.Point(25, 156)
+        Me.btnRefreshPreview.Location = New System.Drawing.Point(25, 80)
         Me.btnRefreshPreview.Name = "btnRefreshPreview"
         Me.btnRefreshPreview.Size = New System.Drawing.Size(67, 23)
         Me.btnRefreshPreview.TabIndex = 13
@@ -300,14 +270,6 @@ Partial Class byColAdvConfigControl
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Normalize"
         '
-        'ColGrpSizeControl
-        '
-        Me.ColGrpSizeControl.Enabled = False
-        Me.ColGrpSizeControl.Location = New System.Drawing.Point(62, 111)
-        Me.ColGrpSizeControl.Name = "ColGrpSizeControl"
-        Me.ColGrpSizeControl.Size = New System.Drawing.Size(61, 22)
-        Me.ColGrpSizeControl.TabIndex = 7
-        '
         'byColAdvConfigControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -321,13 +283,11 @@ Partial Class byColAdvConfigControl
         Me.TableLayoutPanel1.PerformLayout()
         Me.grpbox1.ResumeLayout(False)
         Me.grpbox1.PerformLayout()
-        CType(Me.byColGrpSize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.PreviewColumn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -352,9 +312,5 @@ Partial Class byColAdvConfigControl
     Friend WithEvents btnRefreshPreview As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents byColGrpSize As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents PreviewColumn As System.Windows.Forms.TrackBar
-    Friend WithEvents ColGrpSizeControl As System.Windows.Forms.TextBox
+    Friend WithEvents DataColumnGroupSize As System.Windows.Forms.ComboBox
 End Class

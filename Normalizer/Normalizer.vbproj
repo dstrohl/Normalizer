@@ -119,6 +119,7 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -177,6 +178,12 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
+    <Compile Include="byColSample.Designer.vb">
+      <DependentUpon>byColSample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="byColSample.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="byDelAdvConfig.Designer.vb">
       <DependentUpon>byDelAdvConfig.vb</DependentUpon>
     </Compile>
@@ -184,20 +191,14 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="column_class.vb" />
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="normalizerCommon.vb" />
+    <Compile Include="NormalizerConfigs.vb" />
     <Compile Include="NormalizerRibbon.Designer.vb">
       <DependentUpon>NormalizerRibbon.vb</DependentUpon>
     </Compile>
     <Compile Include="NormalizerRibbon.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Normalizer_config_class.vb" />
     <Compile Include="ThisAddIn.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -207,6 +208,9 @@
     <Compile Include="byColAdvConfig.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <EmbeddedResource Include="byColSample.resx">
+      <DependentUpon>byColSample.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="byDelAdvConfig.resx">
       <DependentUpon>byDelAdvConfig.vb</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +220,7 @@
     <EmbeddedResource Include="byColAdvConfig.resx">
       <DependentUpon>byColAdvConfig.vb</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Normalizer_TemporaryKey.pfx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>
@@ -224,9 +229,6 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -250,6 +252,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
